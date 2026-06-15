@@ -25,38 +25,43 @@ class _WrapperState extends State<Wrapper> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                'assets/logo/app_logo.png',
-                width: screenWidth(context) * 0.75,
-                height: screenHeight(context) * 0.4,
-              ),
-              SizedBox(height: screenHeight(context) * 0.04),
-              SizedBox(
-                height: screenHeight(context) * 0.12,
-                child: AnimatedTextKit(
-                  isRepeatingAnimation: false,
-                  totalRepeatCount: 1,
-                  animatedTexts: [
-                    TyperAnimatedText(
-                      'A Better Cooking\nExperience',
-                      textStyle: const TextStyle(
-                        fontSize: 35,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Dancing Script',
-                      ),
-                      textAlign: TextAlign.center,
-                      speed: const Duration(milliseconds: 70),
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // logo
+            Image.asset(
+              'assets/logo/app_logo.png',
+              width: screenWidth(context) * 0.75,
+              height: screenHeight(context) * 0.4,
+            ),
+            SizedBox(height: screenHeight(context) * 0.04),
+
+            /*animated tagline
+            ps: add animated text kit dependency in 
+            pebsspec.yaml for it to work */
+            SizedBox(
+              height: screenHeight(context) * 0.12,
+              child: AnimatedTextKit(
+                isRepeatingAnimation: false,
+                totalRepeatCount: 1,
+                animatedTexts: [
+                  TyperAnimatedText(
+                    'A Better Cooking\nExperience',
+                    textStyle: TextStyle(
+                      color: Theme.of(context).colorScheme.secondary,
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Dancing Script',
                     ),
-                  ],
-                ),
+                    textAlign: TextAlign.center,
+                    speed: const Duration(milliseconds: 70),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

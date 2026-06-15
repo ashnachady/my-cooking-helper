@@ -5,6 +5,6 @@ ThemeData appTheme = ThemeData(
     surface: Colors.white,
     primary: Colors.pink,
     secondary: Colors.black,
-    tertiary: Colors.grey,
+    tertiary: Colors.grey.shade500,
   ),
 );
