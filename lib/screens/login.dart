@@ -3,6 +3,7 @@ import 'package:my_cooking_helper/custom_widgets/custom_button.dart';
 import 'package:my_cooking_helper/custom_widgets/custom_textfield.dart';
 import 'package:my_cooking_helper/screens/home.dart';
 import 'package:my_cooking_helper/screens/register.dart';
+import 'package:my_cooking_helper/screens/resetPassword.dart';
 import 'package:my_cooking_helper/utils/responsive.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -24,7 +25,12 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  void resetPassword() {}
+  void resetPassword() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (_) => Resetpassword()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

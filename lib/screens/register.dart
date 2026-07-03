@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_cooking_helper/custom_widgets/custom_button.dart';
 import 'package:my_cooking_helper/custom_widgets/custom_textfield.dart';
+import 'package:my_cooking_helper/screens/home.dart';
 import 'package:my_cooking_helper/screens/login.dart';
 import 'package:my_cooking_helper/utils/responsive.dart';
 
@@ -18,7 +19,12 @@ class _RegisiterScreenState extends State<RegisterScreen> {
   final TextEditingController _fNameController = TextEditingController();
   final TextEditingController _lNameController = TextEditingController();
 
-  void register() {}
+  void register() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (_) => HomeScreen()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
