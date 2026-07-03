@@ -97,7 +97,7 @@ class _RegisiterScreenState extends State<RegisterScreen> {
               SizedBox(height: screenHeight(context) * 0.04),
 
               // button for register
-              CustomButton(text: "Login", onPressed: register),
+              CustomButton(text: "Register", onPressed: register),
 
               // In row(text for already have account, textbutton for login)
               Row(
