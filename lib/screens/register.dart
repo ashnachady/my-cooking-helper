@@ -3,16 +3,16 @@ import 'package:my_cooking_helper/custom_widgets/custom_button.dart';
 import 'package:my_cooking_helper/custom_widgets/custom_textfield.dart';
 import 'package:my_cooking_helper/screens/home.dart';
 import 'package:my_cooking_helper/screens/login.dart';
-import 'package:my_cooking_helper/utils/responsive.dart';
+import 'package:my_cooking_helper/core/utils/responsive.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 
   @override
-  State<RegisterScreen> createState() => _RegisiterScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _RegisiterScreenState extends State<RegisterScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pswordController = TextEditingController();
   final TextEditingController _retypePswordController = TextEditingController();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_cooking_helper/screens/wrapper.dart';
-import 'package:my_cooking_helper/theme/app_theme.dart';
+import 'package:my_cooking_helper/core/theme/app_theme.dart';
 
 void main() {
   runApp(MyCookingHelper());

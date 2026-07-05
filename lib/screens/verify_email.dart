@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:my_cooking_helper/custom_widgets/custom_button.dart';
 import 'package:my_cooking_helper/custom_widgets/custom_textfield.dart';
-import 'package:my_cooking_helper/screens/otpVerify.dart';
-import 'package:my_cooking_helper/utils/responsive.dart';
+import 'package:my_cooking_helper/screens/otp_verify.dart';
+import 'package:my_cooking_helper/core/utils/responsive.dart';
 
-class Resetpassword extends StatefulWidget {
-  const Resetpassword({super.key});
+class VerifyEmail extends StatefulWidget {
+  const VerifyEmail({super.key});
 
   @override
-  State<Resetpassword> createState() => _ResetpasswordState();
+  State<VerifyEmail> createState() => _VerifyEmailState();
 }
 
-class _ResetpasswordState extends State<Resetpassword> {
+class _VerifyEmailState extends State<VerifyEmail> {
   final TextEditingController _emailController = TextEditingController();
 
   void otpVerification() {
-    Navigator.pushReplacement(
+    Navigator.push(
       context,
-      MaterialPageRoute(builder: (_) => OtpVerification()),
+      MaterialPageRoute(
+        builder: (_) =>
+            OtpVerification(emailController: _emailController.text.trim()),
+      ),
     );
   }
 
@@ -31,7 +34,7 @@ class _ResetpasswordState extends State<Resetpassword> {
           children: [
             // reset password text
             Text(
-              "Reset Password",
+              "Forgot Password?",
               style: TextStyle(
                 color: Theme.of(context).colorScheme.secondary,
                 fontWeight: FontWeight.bold,
@@ -42,7 +45,7 @@ class _ResetpasswordState extends State<Resetpassword> {
 
             //enter credential text
             Text(
-              "Enter your credentials here",
+              "Enter your email address for verification",
               style: TextStyle(
                 color: Theme.of(context).colorScheme.tertiary,
                 fontSize: 20,

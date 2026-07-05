@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:my_cooking_helper/screens/login.dart';
-import 'package:my_cooking_helper/utils/responsive.dart';
+import 'package:my_cooking_helper/core/utils/responsive.dart';
 
 class Wrapper extends StatefulWidget {
   const Wrapper({super.key});
@@ -41,8 +41,8 @@ class _WrapperState extends State<Wrapper> {
             SizedBox(height: screenHeight(context) * 0.04),
 
             /*animated tagline
-            ps: add animated text kit dependency in 
-            pebsspec.yaml for it to work */
+            note: add animated text kit dependency in 
+            pebspec.yaml for it to work */
             SizedBox(
               height: screenHeight(context) * 0.12,
               child: AnimatedTextKit(
