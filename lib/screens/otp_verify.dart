@@ -81,74 +81,80 @@ class _OtpVerificationState extends State<OtpVerification> {
 
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Verification text
-            Text(
-              "Verify Your Email",
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.secondary,
-                fontWeight: FontWeight.bold,
-                fontSize: 35,
-              ),
-            ),
-            SizedBox(height: screenHeight(context) * 0.02),
-
-            // Enter Otp text
-            Text(
-              "A verification code is sent to:",
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.tertiary,
-                fontSize: 20,
-              ),
-            ),
-            SizedBox(height: screenHeight(context) * 0.01),
-
-            // email address text
-            Text(
-              widget._emailController,
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.tertiary,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: screenHeight(context) * 0.04),
-
-            /* textboxes for otp
-            note: add Pinput dependency in 
-            pebspec.yaml for it to work */
-            Pinput(length: 6, onChanged: (value) => otpCode = value),
-
-            // resent button with timer
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Code not received?",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.secondary,
-                    fontSize: 15,
-                  ),
+      body: SingleChildScrollView(
+        child: Container(
+          height: screenHeight(context),
+          padding: EdgeInsets.symmetric(
+            horizontal: responsiveWidth(context, 8),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Verification text
+              Text(
+                "Verify Your Email",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.secondary,
+                  fontWeight: FontWeight.bold,
+                  fontSize: responsiveFontSize(context, 35),
                 ),
-                TextButton(
-                  onPressed: handleButtonClick,
-                  child: Text(
-                    "Resend in $_startSeconds",
+              ),
+              SizedBox(height: screenHeight(context) * 0.02),
+
+              // Enter Otp text
+              Text(
+                "A verification code is sent to:",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.tertiary,
+                  fontSize: responsiveFontSize(context, 20),
+                ),
+              ),
+              SizedBox(height: screenHeight(context) * 0.01),
+
+              // email address text
+              Text(
+                widget._emailController,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.tertiary,
+                  fontSize: responsiveFontSize(context, 20),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: screenHeight(context) * 0.04),
+
+              /* textboxes for otp
+              note: add Pinput dependency in 
+              pebspec.yaml for it to work */
+              Pinput(length: 6, onChanged: (value) => otpCode = value),
+
+              // resent button with timer
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Code not received?",
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).colorScheme.secondary,
+                      fontSize: responsiveFontSize(context, 15),
                     ),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(height: screenHeight(context) * 0.04),
+                  TextButton(
+                    onPressed: handleButtonClick,
+                    child: Text(
+                      "Resend in $_startSeconds",
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: screenHeight(context) * 0.04),
 
-            // submit button
-            CustomButton(text: "Verify", onPressed: submitOTP),
-          ],
+              // submit button
+              CustomButton(text: "Verify", onPressed: submitOTP),
+            ],
+          ),
         ),
       ),
     );

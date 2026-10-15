@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_cooking_helper/core/utils/responsive.dart';
 
 class CustomTextfield extends StatelessWidget {
   final String hintText;
@@ -17,10 +18,14 @@ class CustomTextfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 35.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.5),
       child: TextField(
         obscureText: obcureText,
         controller: controller,
+        style: TextStyle(
+          fontSize: responsiveFontSize(context, 16),
+          color: Theme.of(context).colorScheme.tertiary,
+        ),
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25),
@@ -38,7 +43,13 @@ class CustomTextfield extends StatelessWidget {
           fillColor: Theme.of(context).colorScheme.surface,
           filled: true,
           hintText: hintText,
-          hintStyle: TextStyle(color: Theme.of(context).colorScheme.tertiary),
+          hintStyle: TextStyle(
+            color: Theme.of(context).colorScheme.tertiary,
+            fontSize: responsiveFontSize(context, 16),
+          ),
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: responsiveWidth(context, 4.0),
+          ),
         ),
       ),
     );

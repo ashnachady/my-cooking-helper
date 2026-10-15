@@ -28,46 +28,53 @@ class _VerifyEmailState extends State<VerifyEmail> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // reset password text
-            Text(
-              "Forgot Password?",
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.secondary,
-                fontWeight: FontWeight.bold,
-                fontSize: 35,
+      body: SingleChildScrollView(
+        child: Container(
+          height: screenHeight(context),
+          padding: EdgeInsets.symmetric(
+            horizontal: responsiveWidth(context, 8),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // reset password text
+              Text(
+                "Forgot Password?",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.secondary,
+                  fontWeight: FontWeight.bold,
+                  fontSize: responsiveFontSize(context, 35),
+                ),
               ),
-            ),
-            SizedBox(height: screenHeight(context) * 0.02),
+              SizedBox(height: screenHeight(context) * 0.02),
 
-            //enter credential text
-            Text(
-              "Enter your email address for verification",
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.tertiary,
-                fontSize: 20,
+              //enter credential text
+              Text(
+                "Enter your email address for verification",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.tertiary,
+                  fontSize: responsiveFontSize(context, 20),
+                ),
               ),
-            ),
-            SizedBox(height: screenHeight(context) * 0.06),
+              SizedBox(height: screenHeight(context) * 0.06),
 
-            //email textbox
-            CustomTextfield(
-              icon: Icons.email,
-              hintText: "Email",
-              obcureText: false,
-              controller: _emailController,
-            ),
-            SizedBox(height: screenHeight(context) * 0.04),
+              //email textbox
+              CustomTextfield(
+                icon: Icons.email,
+                hintText: "Email",
+                obcureText: false,
+                controller: _emailController,
+              ),
+              SizedBox(height: screenHeight(context) * 0.04),
 
-            // verify email button
-            CustomButton(
-              text: "Verify Email Address",
-              onPressed: otpVerification,
-            ),
-          ],
+              // verify email button
+              CustomButton(
+                text: "Verify Email Address",
+                onPressed: otpVerification,
+              ),
+            ],
+          ),
         ),
       ),
     );

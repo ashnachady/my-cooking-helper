@@ -30,9 +30,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(vertical: screenHeight(context) * 0.10),
+      body: SingleChildScrollView(
+        child: Container(
+          height: screenHeight(context),
+          padding: EdgeInsets.symmetric(
+            horizontal: responsiveWidth(context, 8),
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -42,7 +45,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.secondary,
                   fontWeight: FontWeight.bold,
-                  fontSize: 35,
+                  fontSize: responsiveFontSize(context, 35),
                 ),
               ),
               SizedBox(height: screenHeight(context) * 0.02),
@@ -52,7 +55,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 "Enter your credentials here",
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.tertiary,
-                  fontSize: 20,
+                  fontSize: responsiveFontSize(context, 20),
                 ),
               ),
               SizedBox(height: screenHeight(context) * 0.06),
@@ -113,7 +116,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     "Already have an accout?",
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.secondary,
-                      fontSize: 15,
+                      fontSize: responsiveFontSize(context, 15),
                     ),
                   ),
                   TextButton(
@@ -125,6 +128,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       "Login",
                       style: TextStyle(
                         color: Theme.of(context).colorScheme.primary,
+                        fontSize: responsiveFontSize(context, 15),
                       ),
                     ),
                   ),

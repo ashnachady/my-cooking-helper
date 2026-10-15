@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_cooking_helper/custom_widgets/side_drawer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,6 +11,16 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        title: Text(
+          "Home",
+          style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
+        ),
+      ),
+      drawer: SideDrawer(),
+    );
   }
 }

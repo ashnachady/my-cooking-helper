@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_cooking_helper/core/utils/responsive.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -17,7 +18,10 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(25.0),
         ),
       ),
-      child: Text(text, style: const TextStyle(fontSize: 18)),
+      child: Text(
+        text,
+        style: TextStyle(fontSize: responsiveFontSize(context, 18)),
+      ),
     );
   }
 }

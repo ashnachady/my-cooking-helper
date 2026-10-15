@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_cooking_helper/core/utils/responsive.dart';
 import 'package:my_cooking_helper/custom_widgets/custom_button.dart';
 import 'package:my_cooking_helper/custom_widgets/custom_textfield.dart';
+import 'package:my_cooking_helper/screens/home.dart';
 
 class ResetPassword extends StatefulWidget {
   const ResetPassword({super.key});
@@ -14,13 +15,22 @@ class _ResetPasswordState extends State<ResetPassword> {
   final TextEditingController _pswordController = TextEditingController();
   final TextEditingController _retypePswordController = TextEditingController();
 
-  void changePassword() {}
+  void changePassword() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (_) => HomeScreen()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
-      body: Center(
+      body: Container(
+        height: screenHeight(context),
+        padding: EdgeInsets.symmetric(
+          horizontal: responsiveWidth(context, 8.0),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -30,7 +40,7 @@ class _ResetPasswordState extends State<ResetPassword> {
               style: TextStyle(
                 color: Theme.of(context).colorScheme.secondary,
                 fontWeight: FontWeight.bold,
-                fontSize: 35,
+                fontSize: responsiveFontSize(context, 35),
               ),
             ),
             SizedBox(height: screenHeight(context) * 0.02),
@@ -40,7 +50,7 @@ class _ResetPasswordState extends State<ResetPassword> {
               "Change your password",
               style: TextStyle(
                 color: Theme.of(context).colorScheme.tertiary,
-                fontSize: 20,
+                fontSize: responsiveFontSize(context, 20),
               ),
             ),
             SizedBox(height: screenHeight(context) * 0.06),
