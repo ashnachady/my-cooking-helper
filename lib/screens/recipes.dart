@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_cooking_helper/core/utils/responsive.dart';
 import 'package:my_cooking_helper/custom_widgets/side_drawer.dart';
 
 class RecipesScreen extends StatefulWidget {
@@ -17,7 +18,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
           "Recipes",
-          style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: responsiveFontSize(context, 24)),
         ),
       ),
       drawer: SideDrawer(),

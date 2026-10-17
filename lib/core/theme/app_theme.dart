@@ -6,5 +6,6 @@ ThemeData appTheme = ThemeData(
     primary: Colors.pink,
     secondary: Colors.black,
     tertiary: Colors.grey.shade500,
+    onTertiary: Colors.white54,
   ),
 );

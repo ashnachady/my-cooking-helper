@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_cooking_helper/core/utils/responsive.dart';
 import 'package:my_cooking_helper/screens/home.dart';
 import 'package:my_cooking_helper/screens/myPantry.dart';
 import 'package:my_cooking_helper/screens/recipes.dart';
@@ -26,32 +27,33 @@ class SideDrawer extends StatelessWidget {
       onTap: () {},
       child: Container(
         padding: EdgeInsets.only(
-          top: 24 + MediaQuery.of(context).padding.top,
-          bottom: 24,
+          top:
+              responsiveHeight(context, 3) + MediaQuery.of(context).padding.top,
+          bottom: responsiveHeight(context, 3),
         ),
         child: Column(
           children: [
             CircleAvatar(
-              radius: 52,
-              backgroundColor: Colors.white54,
+              radius: responsiveWidth(context, 13),
+              backgroundColor: Theme.of(context).colorScheme.onTertiary,
               child: Icon(
                 Icons.person,
-                size: 70,
+                size: responsiveFontSize(context, 70),
                 color: Theme.of(context).colorScheme.surface,
               ),
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: responsiveHeight(context, 1.5)),
             Text(
               "Name Surname",
               style: TextStyle(
-                fontSize: 24,
+                fontSize: responsiveFontSize(context, 24),
                 color: Theme.of(context).colorScheme.surface,
               ),
             ),
             Text(
               "email@gmail.com",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: responsiveFontSize(context, 18),
                 color: Theme.of(context).colorScheme.surface,
               ),
             ),
@@ -62,38 +64,71 @@ class SideDrawer extends StatelessWidget {
   );
 
   Widget buildMenuItems(BuildContext context) => Container(
-    padding: const EdgeInsets.all(24),
+    padding: EdgeInsets.all(responsiveWidth(context, 6)),
     child: Wrap(
-      runSpacing: 16,
+      runSpacing: responsiveHeight(context, 2),
       children: [
         ListTile(
-          leading: const Icon(Icons.home_outlined, size: 28),
-          title: const Text("Home", style: TextStyle(fontSize: 18)),
-          onTap: () => Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (_) => HomeScreen()),
+          leading: Icon(
+            Icons.home_outlined,
+            size: responsiveFontSize(context, 28),
           ),
+          title: Text(
+            "Home",
+            style: TextStyle(fontSize: responsiveFontSize(context, 18)),
+          ),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => HomeScreen()),
+            );
+          },
         ),
         ListTile(
-          leading: const Icon(Icons.kitchen_outlined, size: 28),
-          title: const Text("My Pantry", style: TextStyle(fontSize: 18)),
-          onTap: () => Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (_) => MyPantryScreen()),
+          leading: Icon(
+            Icons.kitchen_outlined,
+            size: responsiveFontSize(context, 28),
           ),
+          title: Text(
+            "My Pantry",
+            style: TextStyle(fontSize: responsiveFontSize(context, 18)),
+          ),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => MyPantryScreen()),
+            );
+          },
         ),
         ListTile(
-          leading: const Icon(Icons.menu_book_outlined, size: 28),
-          title: const Text("Recipes", style: TextStyle(fontSize: 18)),
-          onTap: () => Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (_) => RecipesScreen()),
+          leading: Icon(
+            Icons.menu_book_outlined,
+            size: responsiveFontSize(context, 28),
           ),
+          title: Text(
+            "Recipes",
+            style: TextStyle(fontSize: responsiveFontSize(context, 18)),
+          ),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => RecipesScreen()),
+            );
+          },
         ),
-        const Divider(color: Colors.black54),
+        Divider(color: Theme.of(context).colorScheme.secondary, thickness: 1.5),
         ListTile(
-          leading: const Icon(Icons.logout_outlined, size: 28),
-          title: const Text("Log Out", style: TextStyle(fontSize: 18)),
+          leading: Icon(
+            Icons.logout_outlined,
+            size: responsiveFontSize(context, 28),
+          ),
+          title: Text(
+            "Log Out",
+            style: TextStyle(fontSize: responsiveFontSize(context, 18)),
+          ),
           onTap: logout,
         ),
       ],
