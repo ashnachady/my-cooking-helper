@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_cooking_helper/core/utils/responsive.dart';
+import 'package:my_cooking_helper/custom_widgets/custom_dataSquare.dart';
 import 'package:my_cooking_helper/custom_widgets/side_drawer.dart';
 
 class RecipesScreen extends StatefulWidget {
@@ -10,6 +11,14 @@ class RecipesScreen extends StatefulWidget {
 }
 
 class _RecipesScreenState extends State<RecipesScreen> {
+  final List _dataList = [
+    'DataList 1',
+    'DataList 2',
+    'DataList 3',
+    'DataList 4',
+    'DataList 5',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +31,12 @@ class _RecipesScreenState extends State<RecipesScreen> {
         ),
       ),
       drawer: SideDrawer(),
+      body: ListView.builder(
+        itemCount: _dataList.length,
+        itemBuilder: (context, index) {
+          return CustomDatasquare(child: _dataList[index]);
+        },
+      ),
     );
   }
 }

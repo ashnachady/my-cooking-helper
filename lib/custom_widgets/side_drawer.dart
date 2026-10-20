@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:my_cooking_helper/core/utils/responsive.dart';
 import 'package:my_cooking_helper/screens/home.dart';
+import 'package:my_cooking_helper/screens/login.dart';
 import 'package:my_cooking_helper/screens/myPantry.dart';
 import 'package:my_cooking_helper/screens/recipes.dart';
 
-class SideDrawer extends StatelessWidget {
+class SideDrawer extends StatefulWidget {
   const SideDrawer({super.key});
+  @override
+  State<SideDrawer> createState() => _SideDrawerState();
+}
 
-  void logout() {}
+class _SideDrawerState extends State<SideDrawer> {
+  void logout() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (_) => LoginScreen()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
