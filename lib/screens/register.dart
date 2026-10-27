@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_cooking_helper/custom_widgets/custom_button.dart';
-import 'package:my_cooking_helper/custom_widgets/custom_textfield.dart';
+import 'package:my_cooking_helper/customWidgets/customButton.dart';
+import 'package:my_cooking_helper/customWidgets/customTextfield.dart';
 import 'package:my_cooking_helper/screens/home.dart';
 import 'package:my_cooking_helper/screens/login.dart';
 import 'package:my_cooking_helper/core/utils/responsive.dart';
@@ -18,6 +18,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _retypePswordController = TextEditingController();
   final TextEditingController _fNameController = TextEditingController();
   final TextEditingController _lNameController = TextEditingController();
+  bool _isHidden = true;
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _pswordController.dispose();
+    _retypePswordController.dispose();
+    _fNameController.dispose();
+    _lNameController.dispose();
+    super.dispose();
+  }
 
   void register() {
     Navigator.pushReplacement(
@@ -91,8 +102,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
               CustomTextfield(
                 icon: Icons.password,
                 hintText: "Create password",
-                obcureText: true,
+                obcureText: _isHidden,
                 controller: _pswordController,
+                suffix: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _isHidden = !_isHidden;
+                    });
+                  },
+                  child: Icon(Icons.visibility),
+                ),
               ),
               SizedBox(height: screenHeight(context) * 0.03),
 
@@ -100,8 +119,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
               CustomTextfield(
                 icon: Icons.password,
                 hintText: "Retype password",
-                obcureText: true,
+                obcureText: _isHidden,
                 controller: _retypePswordController,
+                suffix: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _isHidden = !_isHidden;
+                    });
+                  },
+                  child: Icon(Icons.visibility),
+                ),
               ),
               SizedBox(height: screenHeight(context) * 0.04),
 

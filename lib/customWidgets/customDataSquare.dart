@@ -16,7 +16,7 @@ class CustomDatasquare extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: Theme.of(context).colorScheme.secondary,
-            width: 2.0,
+            width: 1.0,
           ),
         ),
         child: Padding(

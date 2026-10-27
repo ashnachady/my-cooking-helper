@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_cooking_helper/core/utils/responsive.dart';
-import 'package:my_cooking_helper/custom_widgets/custom_button.dart';
-import 'package:my_cooking_helper/custom_widgets/custom_textfield.dart';
+import 'package:my_cooking_helper/customWidgets/customButton.dart';
+import 'package:my_cooking_helper/customWidgets/customTextfield.dart';
 import 'package:my_cooking_helper/screens/home.dart';
 
 class ResetPassword extends StatefulWidget {

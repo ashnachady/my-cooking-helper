@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_cooking_helper/custom_widgets/custom_button.dart';
-import 'package:my_cooking_helper/custom_widgets/custom_textfield.dart';
+import 'package:my_cooking_helper/customWidgets/customButton.dart';
+import 'package:my_cooking_helper/customWidgets/customTextfield.dart';
 import 'package:my_cooking_helper/screens/home.dart';
 import 'package:my_cooking_helper/screens/register.dart';
 import 'package:my_cooking_helper/core/utils/responsive.dart';
-import 'package:my_cooking_helper/screens/verify_email.dart';
+import 'package:my_cooking_helper/screens/verifyEmail.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -17,6 +17,14 @@ class _LoginScreenState extends State<LoginScreen> {
   //email and psword controller
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pswordController = TextEditingController();
+  bool _isHidden = true;
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _pswordController.dispose();
+    super.dispose();
+  }
 
   void login() {
     Navigator.pushReplacement(
@@ -79,8 +87,16 @@ class _LoginScreenState extends State<LoginScreen> {
               CustomTextfield(
                 icon: Icons.password,
                 hintText: "Password",
-                obcureText: true,
+                obcureText: _isHidden,
                 controller: _pswordController,
+                suffix: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _isHidden = !_isHidden;
+                    });
+                  },
+                  child: Icon(Icons.visibility),
+                ),
               ),
 
               //text button forgot password

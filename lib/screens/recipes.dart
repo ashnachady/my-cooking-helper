@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_cooking_helper/core/utils/responsive.dart';
-import 'package:my_cooking_helper/custom_widgets/custom_dataSquare.dart';
-import 'package:my_cooking_helper/custom_widgets/side_drawer.dart';
+import 'package:my_cooking_helper/customWidgets/customDataSquare.dart';
+import 'package:my_cooking_helper/customWidgets/sideDrawer.dart';
 
 class RecipesScreen extends StatefulWidget {
   const RecipesScreen({super.key});
@@ -12,6 +12,11 @@ class RecipesScreen extends StatefulWidget {
 
 class _RecipesScreenState extends State<RecipesScreen> {
   final List _dataList = [
+    'DataList 1',
+    'DataList 2',
+    'DataList 3',
+    'DataList 4',
+    'DataList 5',
     'DataList 1',
     'DataList 2',
     'DataList 3',

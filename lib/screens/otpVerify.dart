@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:my_cooking_helper/core/utils/responsive.dart';
-import 'package:my_cooking_helper/custom_widgets/custom_button.dart';
-import 'package:my_cooking_helper/screens/reset_password.dart';
+import 'package:my_cooking_helper/customWidgets/customButton.dart';
+import 'package:my_cooking_helper/screens/resetPassword.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpVerification extends StatefulWidget {

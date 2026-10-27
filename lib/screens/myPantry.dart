@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_cooking_helper/core/utils/responsive.dart';
-import 'package:my_cooking_helper/custom_widgets/custom_dataSquare.dart';
-import 'package:my_cooking_helper/custom_widgets/side_drawer.dart';
+import 'package:my_cooking_helper/customWidgets/customDataSquare.dart';
+import 'package:my_cooking_helper/customWidgets/sideDrawer.dart';
+import 'package:my_cooking_helper/screens/addIngredient.dart';
 
 class MyPantryScreen extends StatefulWidget {
   const MyPantryScreen({super.key});
@@ -12,6 +13,11 @@ class MyPantryScreen extends StatefulWidget {
 
 class _MyPantryScreenState extends State<MyPantryScreen> {
   final List _dataList = [
+    'DataList 1',
+    'DataList 2',
+    'DataList 3',
+    'DataList 4',
+    'DataList 5',
     'DataList 1',
     'DataList 2',
     'DataList 3',
@@ -36,6 +42,14 @@ class _MyPantryScreenState extends State<MyPantryScreen> {
         itemBuilder: (context, index) {
           return CustomDatasquare(child: _dataList[index]);
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => Addingredient()),
+        ),
+        tooltip: 'Add Ingredient',
+        child: Icon(Icons.add),
       ),
     );
   }

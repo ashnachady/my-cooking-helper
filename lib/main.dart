@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:my_cooking_helper/screens/wrapper.dart';
-import 'package:my_cooking_helper/core/theme/app_theme.dart';
+import 'package:my_cooking_helper/core/theme/appTheme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

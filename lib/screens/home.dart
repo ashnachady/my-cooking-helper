@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_cooking_helper/core/utils/responsive.dart';
-import 'package:my_cooking_helper/custom_widgets/side_drawer.dart';
+import 'package:my_cooking_helper/customWidgets/sideDrawer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

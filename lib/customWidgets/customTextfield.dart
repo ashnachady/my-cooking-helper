@@ -6,6 +6,7 @@ class CustomTextfield extends StatelessWidget {
   final bool obcureText;
   final TextEditingController controller;
   final IconData icon;
+  final Widget? suffix;
 
   const CustomTextfield({
     super.key,
@@ -13,6 +14,7 @@ class CustomTextfield extends StatelessWidget {
     required this.obcureText,
     required this.controller,
     required this.icon,
+    this.suffix,
   });
 
   @override
@@ -25,7 +27,7 @@ class CustomTextfield extends StatelessWidget {
         cursorColor: Theme.of(context).colorScheme.secondary,
         style: TextStyle(
           fontSize: responsiveFontSize(context, 16),
-          color: Theme.of(context).colorScheme.tertiary,
+          color: Theme.of(context).colorScheme.secondary,
         ),
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
@@ -51,6 +53,14 @@ class CustomTextfield extends StatelessWidget {
           contentPadding: EdgeInsets.symmetric(
             horizontal: responsiveWidth(context, 4.0),
           ),
+          suffixIcon: suffix != null
+              ? IconTheme(
+                  data: IconThemeData(
+                    color: Theme.of(context).colorScheme.tertiary,
+                  ),
+                  child: suffix!,
+                )
+              : null,
         ),
       ),
     );
