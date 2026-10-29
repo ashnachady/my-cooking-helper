@@ -41,7 +41,7 @@ class _VerifyEmailState extends State<VerifyEmail> {
               Text(
                 "Forgot Password?",
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: Theme.of(context).colorScheme.primary,
                   fontWeight: FontWeight.bold,
                   fontSize: responsiveFontSize(context, 35),
                 ),

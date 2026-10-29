@@ -30,7 +30,7 @@ class _MyPantryScreenState extends State<MyPantryScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         title: Text(
           "My Pantry",
           style: TextStyle(fontSize: responsiveFontSize(context, 24)),
@@ -48,6 +48,7 @@ class _MyPantryScreenState extends State<MyPantryScreen> {
           context,
           MaterialPageRoute(builder: (_) => Addingredient()),
         ),
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         tooltip: 'Add Ingredient',
         child: Icon(Icons.add),
       ),

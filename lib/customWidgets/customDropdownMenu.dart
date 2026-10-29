@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_cooking_helper/core/utils/responsive.dart';
 
 class CustomDropdownMenu extends StatelessWidget {
   final String hintText;
@@ -21,11 +22,15 @@ class CustomDropdownMenu extends StatelessWidget {
     return DropdownMenu<String>(
       controller: controller,
       hintText: hintText,
-      width: double.infinity,
+      enableFilter: true,
+      enableSearch: true,
+      requestFocusOnTap: true,
       leadingIcon: Icon(icon, color: Theme.of(context).colorScheme.tertiary),
       inputDecorationTheme: InputDecorationTheme(
         filled: false,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
+        constraints: BoxConstraints.tightFor(
+          height: responsiveHeight(context, 5.4),
+        ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(25),
           borderSide: BorderSide(color: Theme.of(context).colorScheme.tertiary),

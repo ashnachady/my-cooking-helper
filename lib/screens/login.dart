@@ -57,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Text(
                 "Log In",
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: Theme.of(context).colorScheme.primary,
                   fontWeight: FontWeight.bold,
                   fontSize: responsiveFontSize(context, 35),
                 ),
@@ -127,9 +127,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Do not have an accout?",
+                    "Do not have an account?",
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).colorScheme.primary,
                       fontSize: responsiveFontSize(context, 15),
                     ),
                   ),
@@ -141,7 +141,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Text(
                       "Register Now",
                       style: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).colorScheme.secondary,
                         fontSize: responsiveFontSize(context, 15),
                       ),
                     ),

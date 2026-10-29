@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_cooking_helper/core/utils/responsive.dart';
 import 'package:my_cooking_helper/customWidgets/customButton.dart';
 import 'package:my_cooking_helper/customWidgets/customDropdownMenu.dart';
+import 'package:my_cooking_helper/customWidgets/customSpinBox.dart';
 import 'package:my_cooking_helper/customWidgets/customTextfield.dart';
 import 'package:my_cooking_helper/screens/myPantry.dart';
 
@@ -39,7 +40,7 @@ class _AddingredientState extends State<Addingredient> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         title: Text(
           "Add Ingredient",
           style: TextStyle(fontSize: responsiveFontSize(context, 24)),
@@ -74,11 +75,13 @@ class _AddingredientState extends State<Addingredient> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
-                    child: CustomTextfield(
-                      hintText: "Quantity",
-                      obcureText: false,
-                      controller: _ingQuantityController,
-                      icon: Icons.numbers_outlined,
+                    child: CustomNumberSpinBox(
+                      hintText: "1",
+                      icon: Icons.tag,
+                      value: 1,
+                      onChanged: (value) {
+                        print('Selected quantity: $value');
+                      },
                     ),
                   ),
                   Expanded(

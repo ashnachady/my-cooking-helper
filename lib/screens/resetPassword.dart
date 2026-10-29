@@ -38,7 +38,7 @@ class _ResetPasswordState extends State<ResetPassword> {
             Text(
               "Reset Password",
               style: TextStyle(
-                color: Theme.of(context).colorScheme.secondary,
+                color: Theme.of(context).colorScheme.primary,
                 fontWeight: FontWeight.bold,
                 fontSize: responsiveFontSize(context, 35),
               ),

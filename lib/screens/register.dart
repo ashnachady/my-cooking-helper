@@ -54,7 +54,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               Text(
                 "Create An Account",
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: Theme.of(context).colorScheme.primary,
                   fontWeight: FontWeight.bold,
                   fontSize: responsiveFontSize(context, 35),
                 ),
@@ -140,9 +140,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Already have an accout?",
+                    "Already have an account?",
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).colorScheme.primary,
                       fontSize: responsiveFontSize(context, 15),
                     ),
                   ),
@@ -154,7 +154,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: Text(
                       "Login",
                       style: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).colorScheme.secondary,
                         fontSize: responsiveFontSize(context, 15),
                       ),
                     ),

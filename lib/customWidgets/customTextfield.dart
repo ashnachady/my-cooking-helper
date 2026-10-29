@@ -24,10 +24,9 @@ class CustomTextfield extends StatelessWidget {
       child: TextField(
         obscureText: obcureText,
         controller: controller,
-        cursorColor: Theme.of(context).colorScheme.secondary,
         style: TextStyle(
           fontSize: responsiveFontSize(context, 16),
-          color: Theme.of(context).colorScheme.secondary,
+          color: Theme.of(context).colorScheme.primary,
         ),
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
@@ -39,7 +38,7 @@ class CustomTextfield extends StatelessWidget {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25),
             borderSide: BorderSide(
-              color: Theme.of(context).colorScheme.secondary,
+              color: Theme.of(context).colorScheme.primary,
             ),
           ),
           prefixIcon: Icon(icon, color: Theme.of(context).colorScheme.tertiary),

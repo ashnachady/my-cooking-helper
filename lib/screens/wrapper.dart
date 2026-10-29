@@ -52,7 +52,7 @@ class _WrapperState extends State<Wrapper> {
                   TyperAnimatedText(
                     'A Better Cooking\nExperience',
                     textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).colorScheme.primary,
                       fontSize: responsiveFontSize(context, 35),
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Dancing Script',

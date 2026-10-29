@@ -32,7 +32,7 @@ class _SideDrawerState extends State<SideDrawer> {
   }
 
   Widget buildHeader(BuildContext context) => Material(
-    color: Theme.of(context).colorScheme.primary,
+    color: Theme.of(context).colorScheme.secondary,
     child: InkWell(
       onTap: () {},
       child: Container(
@@ -129,7 +129,7 @@ class _SideDrawerState extends State<SideDrawer> {
             );
           },
         ),
-        Divider(color: Theme.of(context).colorScheme.secondary, thickness: 1.5),
+        Divider(color: Theme.of(context).colorScheme.primary, thickness: 1.5),
         ListTile(
           leading: Icon(
             Icons.logout_outlined,

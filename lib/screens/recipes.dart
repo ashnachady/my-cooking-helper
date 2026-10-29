@@ -29,7 +29,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         title: Text(
           "Recipes",
           style: TextStyle(fontSize: responsiveFontSize(context, 24)),

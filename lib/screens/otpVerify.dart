@@ -94,7 +94,7 @@ class _OtpVerificationState extends State<OtpVerification> {
               Text(
                 "Verify Your Email",
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: Theme.of(context).colorScheme.primary,
                   fontWeight: FontWeight.bold,
                   fontSize: responsiveFontSize(context, 35),
                 ),
@@ -134,7 +134,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                   Text(
                     "Code not received?",
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).colorScheme.primary,
                       fontSize: responsiveFontSize(context, 15),
                     ),
                   ),
@@ -143,7 +143,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                     child: Text(
                       "Resend in $_startSeconds",
                       style: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                     ),
                   ),
